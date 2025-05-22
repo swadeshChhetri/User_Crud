@@ -18,8 +18,8 @@ const App = () => {
     fetchUsers();
   }, []);
 
-  const handleDelete = async (id: number) => {
-    await deleteUser(id);
+  const handleDelete = async (_id: string) => {
+    await deleteUser(_id);
     fetchUsers();
   };
 
@@ -36,7 +36,7 @@ const App = () => {
   return (
     <div className="p-6 max-w-3xl mx-auto">
       <h1 className="text-2xl font-bold mb-4 text-center">User Management</h1>
-      <h5 className='text-center'>(React, Typescript, TailwindCSS, Node.js, Express, MySQL)</h5>
+      <h5 className='text-center'>(React, Typescript, TailwindCSS, Node.js, Express, MongoDB)</h5>
       <button onClick={handleCreate} className="bg-green-500 text-white px-4 py-2 rounded mb-4 float-right">
         + Add User
       </button>

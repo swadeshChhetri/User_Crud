@@ -3,7 +3,7 @@ import type { User } from '../types/User';
 interface Props {
   users: User[];
   onEdit: (user: User) => void;
-  onDelete: (id: number) => void;
+  onDelete: (id: string) => void;
 }
 
 const UserTable = ({ users, onEdit, onDelete }: Props) => {
@@ -19,13 +19,13 @@ const UserTable = ({ users, onEdit, onDelete }: Props) => {
       </thead>
       <tbody>
         {users.map((user, index) => (
-          <tr key={user.id}>
+          <tr key={user._id}>
             <td className="p-2 border">{index + 1}</td>
             <td className="p-2 border">{user.name}</td>
             <td className="p-2 border">{user.email}</td>
             <td className="p-2 border flex gap-4 text-center">
               <button onClick={() => onEdit(user)} className="text-blue-500 w-[40%]">Edit</button>
-              <button onClick={() => onDelete(user.id)} className="text-red-500 w-[40%]">Delete</button>
+              <button onClick={() => onDelete(user._id)} className="text-red-500 w-[40%]">Delete</button>
             </td>
           </tr>
         ))}
