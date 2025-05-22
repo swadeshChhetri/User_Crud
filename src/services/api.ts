@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { User } from './../types/User';
 
-const API_URL = 'http://localhost:5000/api/users'; // adjust if needed
+const API_URL = import.meta.env.VITE_API_URL; // adjust if needed
 
 export const getUsers = () => axios.get<User[]>(API_URL);
 export const createUser = (user: { name: string; email: string }) =>axios.post<User>(API_URL, user);
